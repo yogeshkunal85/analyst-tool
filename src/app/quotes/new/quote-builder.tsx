@@ -163,13 +163,13 @@ export function QuoteBuilder({ products }: { products: ProductOption[] }) {
   return (
     <div className="grid gap-6 lg:grid-cols-2">
       <section className="rounded-lg border bg-white p-6">
-        <h2 className="text-sm font-semibold">Quote inputs</h2>
+        <h2 className="text-sm font-semibold text-zinc-900">Quote inputs</h2>
 
         <div className="mt-4 grid gap-4">
           <div>
-            <label className="block text-sm font-medium">Quote name</label>
+            <label className="block text-sm font-medium text-zinc-900">Quote name</label>
             <input
-              className="mt-1 w-full rounded-md border px-3 py-2 text-sm"
+              className="mt-1 w-full rounded-md border border-zinc-300 px-3 py-2 text-sm text-zinc-900"
               value={name}
               onChange={(e) => setName(e.target.value)}
               placeholder="Acme Corp - Q3 2026 proposal"
@@ -177,9 +177,9 @@ export function QuoteBuilder({ products }: { products: ProductOption[] }) {
           </div>
 
           <div>
-            <label className="block text-sm font-medium">Customer</label>
+            <label className="block text-sm font-medium text-zinc-900">Customer</label>
             <input
-              className="mt-1 w-full rounded-md border px-3 py-2 text-sm"
+              className="mt-1 w-full rounded-md border border-zinc-300 px-3 py-2 text-sm text-zinc-900"
               value={customerLabel}
               onChange={(e) => setCustomerLabel(e.target.value)}
               placeholder="Acme Corporation"
@@ -188,9 +188,9 @@ export function QuoteBuilder({ products }: { products: ProductOption[] }) {
 
           <div className="grid grid-cols-2 gap-3">
             <div>
-              <label className="block text-sm font-medium">Product</label>
+              <label className="block text-sm font-medium text-zinc-900">Product</label>
               <select
-                className="mt-1 w-full rounded-md border px-3 py-2 text-sm"
+                className="mt-1 w-full rounded-md border border-zinc-300 px-3 py-2 text-sm text-zinc-900"
                 value={productId}
                 onChange={(e) => setProductId(e.target.value)}
               >
@@ -203,9 +203,9 @@ export function QuoteBuilder({ products }: { products: ProductOption[] }) {
             </div>
 
             <div>
-              <label className="block text-sm font-medium">Tier</label>
+              <label className="block text-sm font-medium text-zinc-900">Tier</label>
               <select
-                className="mt-1 w-full rounded-md border px-3 py-2 text-sm"
+                className="mt-1 w-full rounded-md border border-zinc-300 px-3 py-2 text-sm text-zinc-900"
                 value={tierId}
                 onChange={(e) => setTierId(e.target.value)}
                 disabled={tiers.length === 0}
@@ -221,9 +221,9 @@ export function QuoteBuilder({ products }: { products: ProductOption[] }) {
 
           <div className="grid grid-cols-2 gap-3">
             <div>
-              <label className="block text-sm font-medium">Seats</label>
+              <label className="block text-sm font-medium text-zinc-900">Seats</label>
               <input
-                className="mt-1 w-full rounded-md border px-3 py-2 text-sm"
+                className="mt-1 w-full rounded-md border border-zinc-300 px-3 py-2 text-sm text-zinc-900"
                 type="number"
                 min={1}
                 value={productSeats}
@@ -232,9 +232,9 @@ export function QuoteBuilder({ products }: { products: ProductOption[] }) {
             </div>
 
             <div>
-              <label className="block text-sm font-medium">Term</label>
+              <label className="block text-sm font-medium text-zinc-900">Term</label>
               <select
-                className="mt-1 w-full rounded-md border px-3 py-2 text-sm"
+                className="mt-1 w-full rounded-md border border-zinc-300 px-3 py-2 text-sm text-zinc-900"
                 value={term}
                 onChange={(e) => setTerm(e.target.value as QuoteTerm)}
               >
@@ -246,9 +246,9 @@ export function QuoteBuilder({ products }: { products: ProductOption[] }) {
           </div>
 
           <div>
-            <label className="block text-sm font-medium">Optional quote discount (%)</label>
+            <label className="block text-sm font-medium text-zinc-900">Optional quote discount (%)</label>
             <input
-              className="mt-1 w-full rounded-md border px-3 py-2 text-sm"
+              className="mt-1 w-full rounded-md border border-zinc-300 px-3 py-2 text-sm text-zinc-900"
               type="number"
               min={0}
               max={99}
@@ -260,7 +260,7 @@ export function QuoteBuilder({ products }: { products: ProductOption[] }) {
       </section>
 
       <section className="rounded-lg border bg-white p-6">
-        <h2 className="text-sm font-semibold">Add-ons</h2>
+        <h2 className="text-sm font-semibold text-zinc-900">Add-ons</h2>
         {tierId === "" ? (
           <p className="mt-3 text-sm text-zinc-600">Select a tier to see add-ons.</p>
         ) : availableAddons.length === 0 ? (
@@ -284,7 +284,7 @@ export function QuoteBuilder({ products }: { products: ProductOption[] }) {
                       className="mt-1"
                     />
                     <div className="flex-1">
-                      <div className="font-medium">{a.featureName}</div>
+                      <div className="font-medium text-zinc-900">{a.featureName}</div>
                       <div className="text-xs text-zinc-600">
                         {a.model === "fixed_per_month"
                           ? `Fixed: $${a.fixedPricePerMonthUsd}/mo`
@@ -321,7 +321,7 @@ export function QuoteBuilder({ products }: { products: ProductOption[] }) {
 
       <section className="lg:col-span-2 rounded-lg border bg-white p-6">
         <div className="flex items-center justify-between">
-          <h2 className="text-sm font-semibold">Quote preview</h2>
+          <h2 className="text-sm font-semibold text-zinc-900">Quote preview</h2>
           <button
             type="button"
             onClick={() => void saveQuote()}
@@ -338,7 +338,7 @@ export function QuoteBuilder({ products }: { products: ProductOption[] }) {
           </p>
         ) : (
           <div className="mt-4 overflow-x-auto">
-            <table className="w-full min-w-[700px] border-collapse text-sm">
+            <table className="w-full min-w-[700px] border-collapse text-sm text-zinc-900">
               <thead>
                 <tr>
                   <th className="border-b px-3 py-2 text-left">Line item</th>

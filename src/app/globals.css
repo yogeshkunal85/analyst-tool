@@ -1,8 +1,11 @@
 @import "tailwindcss";
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --background: #fafafa;
+  --foreground: #18181b;
+  --card: #ffffff;
+  --muted: #52525b;
+  --border: #d4d4d8;
 }
 
 @theme inline {
@@ -12,15 +15,37 @@
   --font-mono: var(--font-geist-mono);
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+html {
+  color-scheme: light;
 }
 
 body {
   background: var(--background);
   color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: var(--font-geist-sans), system-ui, sans-serif;
+}
+
+/* Form controls must not inherit OS dark-mode colors onto white fields */
+input,
+select,
+textarea {
+  color: #18181b;
+  background-color: #ffffff;
+}
+
+input::placeholder,
+textarea::placeholder {
+  color: #a1a1aa;
+}
+
+input:disabled,
+select:disabled,
+textarea:disabled {
+  color: #71717a;
+  background-color: #f4f4f5;
+}
+
+option {
+  color: #18181b;
+  background-color: #ffffff;
 }
